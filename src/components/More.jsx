@@ -1,8 +1,8 @@
 const More = () => {
     return ( 
-        <main className="relative top-[100px] grid gap-8 bg-white px-[5%] py-10">
-            <section className="w-full grid grid-cols-2 items-center gap-8">
-                <div className="grid grid-cols-2 gap-4">
+        <main className="relative top-[80px] grid gap-8 bg-white px-[5%] py-10">
+            <section className="w-full grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+                <div className="grid grid-cols-2 gap-2 md:gap-4">
                     <img src="/img/revive1.jpg" alt="revive-img" className="rounded-lg" />
                     <img src="/img/revive2.jpg" alt="revive-img" className="rounded-lg" />
                     <img src="/img/revive3.jpg" alt="revive-img" className="rounded-lg" />

@@ -39,10 +39,10 @@ const Features = () => {
         }
     ]
     return (
-        <main className="relative top-[100px] grid gap-8 bg-white px-[5%] py-10">
+        <main className="relative top-[80px] grid gap-8 bg-white px-[5%] py-10">
             <h1 className="text-[36px] text-[#161C2D] font-semibold text-center">Features</h1>
 
-            <section className="w-full grid grid-cols-3 items-center gap-8">
+            <section className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center gap-8">
             {featuresDetails.map((details) => (    
                 <div key={details.id} className="flex items-start gap-4">
                     <img src={details.img} alt="" />
