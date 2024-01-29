@@ -5,8 +5,8 @@ import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <main className="relative top-[100px] grid gap-6 bg-[#161C2D] px-[5%] py-10">
-            <section className="flex justify-between gap-4">
+        <main className="relative top-[80px] grid gap-6 bg-[#161C2D] px-[5%] py-10">
+            <section className="flex justify-between flex-wrap gap-4">
                 <div className="flex flex-col gap-3 text-[16px] text-white font-normal">
                     <h1 className="text-[15px] text-gray-300 font-semibold">Company</h1>
                     <a href="">About us</a>
@@ -40,8 +40,8 @@ const Footer = () => {
 
             <hr className="w-full bg-[#292F41]" />
 
-            <div className="flex items-center justify-between">
-                <p className="text-[14px] text-white font-normal">© 2024 Copyright, All Right Reserved, Made by Capstone Group 6</p>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p className="text-[12px] sm:text-[14px] text-white font-normal text-center md:text-left">© 2024 Copyright, All Right Reserved, Made by Capstone Group 6</p>
 
                 <div className="flex items-center justify-center gap-4 text-2xl text-white">
                     <a href=""><FaXTwitter /></a>

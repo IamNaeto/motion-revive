@@ -9,6 +9,7 @@
 // export default Signin;
 
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Signin = () => {
   const [email, setEmail] = useState("");
@@ -103,9 +104,9 @@ const Signin = () => {
             </div>
 
             <div className="text-sm font-bold leading-4 text-left text-purple-800">
-              <a href="#" className="font-medium text-purple-800">
+              <Link to="/forgot-password" className="font-medium text-purple-800">
                 Forgot your password?
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -148,7 +149,7 @@ const Signin = () => {
           </button>
           <div className="mt-5 text-xs font-bold leading-4 text-center">
             Don't have account?{" "}
-            <span className="text-purple-800 font-bold">Sign up</span>
+            <Link to="/signup" className="text-purple-800 font-bold">Sign up</Link>
           </div>
         </div>
       </div>
