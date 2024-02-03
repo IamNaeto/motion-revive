@@ -1,9 +1,9 @@
-import './App.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Signin from './pages/SignIn';
-import Signup from './pages/Signup';
-import ForgotPassword from './pages/ForgotPassword';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Signup from "./pages/Signup";
+import ForgotPassword from "./pages/ForgotPassword";
+import Signin from "./pages/Signin";
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
-  </Router>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
