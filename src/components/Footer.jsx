@@ -5,17 +5,17 @@ import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <main className="relative top-[80px] grid gap-6 bg-[#161C2D] px-[5%] py-10">
+        <main className="relative top-[160px] grid gap-6 bg-[#F3A14C] px-[5%] py-10">
             <section className="flex justify-between flex-wrap gap-4">
                 <div className="flex flex-col gap-3 text-[16px] text-white font-normal">
-                    <h1 className="text-[15px] text-gray-300 font-semibold">Company</h1>
+                    <h1 className="text-[15px] text-[#FFFFFF] font-semibold">Company</h1>
                     <a href="">About us</a>
                     <a href="">Contact us</a>
                     <a href="">Blogs</a>
                     <a href="">Press</a>
                 </div>
                 <div className="flex flex-col gap-3 text-[16px] text-white font-normal">
-                    <h1 className="text-[15px] text-gray-300 font-semibold">Product</h1>
+                    <h1 className="text-[15px] text-[#FFFFFF] font-semibold">Product</h1>
                     <a href="">Features</a>
                     <a href="">Pricing</a>
                     <a href="">News</a>
@@ -23,17 +23,17 @@ const Footer = () => {
                     <a href="">Support</a>
                 </div>
                 <div className="flex flex-col gap-3 text-[16px] text-white font-normal">
-                    <h1 className="text-[15px] text-gray-300 font-semibold">Services</h1>
+                    <h1 className="text-[15px] text-[#FFFFFF] font-semibold">Services</h1>
                     <a href="">Sedentary Alert</a>
                     <a href="">Recommend Exercise</a>
                 </div>
                 <div className="flex flex-col gap-3 text-[16px] text-white font-normal">
-                    <h1 className="text-[15px] text-gray-300 font-semibold">Legal</h1>
+                    <h1 className="text-[15px] text-[#FFFFFF] font-semibold">Legal</h1>
                     <a href="">Privacy Policy</a>
                     <a href="">Terms & Conditions</a>
                 </div>
                 <div className="flex flex-col gap-3 text-[16px] text-white font-normal">
-                    <h1 className="text-[15px] text-gray-300 font-semibold">Contact us</h1>
+                    <h1 className="text-[15px] text-[#FFFFFF] font-semibold">Contact us</h1>
                     <p>support@capstonegroup6.devcareer.com</p>
                 </div>
             </section>

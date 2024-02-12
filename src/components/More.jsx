@@ -11,7 +11,7 @@ const More = () => {
                 </div>
 
                 <div className="grid gap-4">
-                    <h1 className="text-[32px] text-[#161C2D] text-center font-semibold">With Motion Revive App</h1>
+                    <h1 className="text-[32px] text-[#EA7600] text-center font-semibold">With Motion Revive App</h1>
                     <h3 className="text-[18px] text-[#161C2D] text-center font-medium">You can easily plan your Goal with an easy - To - Use interface.</h3>
                     <h3 className="text-[18px] text-[#161C2D] text-center font-medium">Remember those who plan and take responsible actions; never fails.</h3>
                     <h3 className="text-[18px] text-[#161C2D] text-center font-medium">Start Now with just a click.</h3>
