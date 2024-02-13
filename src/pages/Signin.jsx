@@ -86,6 +86,8 @@ const Signin = () => {
                             onChange={(e) => setPassword(e.target.value)} />
                         </label>
 
+                        <Link to={"/forgot-password"} className="font-medium md:text-[14px] text-[12px] text-[#F99025]">Forgot Password?</Link>
+
                         <button 
                         className="bg-[#F99025] text-white font-medium py-3 px-5 text-center rounded-lg"
                         type="submit"
