@@ -10,7 +10,7 @@ function Withmotion() {
         <div className="w-[472px] h-[353px] bg-[#F3A14C] text-[#FFFFFF] pt-[24px] px-[37px] pb-[39px]
         rounded-[25px]">
           <h3 className="text-[48px] font-bold leading-[66px] text-right">With Motion Revive App</h3>
-          <p class="text-[16px] text-right"> You can easily plan your Goal with an easy 
+          <p className="text-[16px] text-right"> You can easily plan your Goal with an easy 
             to use interface.Remember those who 
             plan and take responsible actions; 
             never fails..

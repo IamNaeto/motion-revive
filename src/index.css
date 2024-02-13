@@ -27,3 +27,21 @@
 ::-webkit-scrollbar-thumb {
   background: #EA7600;
 }
+
+
+.input{
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #CCCCCC;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.input::placeholder{
+  font-size: 12px;
+}
+
+.input:focus{
+  border: 2px solid #EA7600;
+  transition: 0.5s;
+}

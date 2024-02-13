@@ -1,160 +1,115 @@
-// const Signin = () => {
-//     return (
-//       <main>
-
-//       </main>
-//     );
-// }
-
-// export default Signin;
-
-import React, { useState } from "react";
+import AuthSideDesign from "../components/AuthSideDesign";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 const Signin = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
-  const handleLogin = () => {
-    // Implement your authentication logic here
-    console.log(`Login with ${email} and ${password}`);
-  };
+    const isFormValid = () => {    
+        if (email === "") {
+            toast.error("Email cannot be empty.")
+          return false;
+        }
 
-  const loginWithGoogle = () => {
-    // Implement Google Sign-in logic here
-    console.log("Login with Google");
-  };
+        if (password === "") {
+            toast.error("Password cannot be empty.")
+          return false;
+        }
+        return true;
+      };
 
-  const loginWithFacebook = () => {
-    // Implement Facebook login logic here
-    console.log("Login with Facebook");
-  };
+    const handleSubmit = async (e) => {
+        // Implement your authentication logic here
+        e.preventDefault();
+        if (isFormValid()) {
+            toast.success("Login successful!")
+            setTimeout(() => {
+                // Implement your authentication logic here
+                console.log({email, password});
 
-  return (
-    <main className="min-h-screen flex items-center justify-center bg-white font-rubik py-4 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-xl w-full space-y-2 border border-solid border-white hover:border-blue-800">
-        <div>
-          <h2 className="text-2xl font-bold leading-6 text-black text-center mb-10">
-            Welcome to Motion Revive
-          </h2>
-        </div>
-        <form className="space-y-2" onSubmit={(e) => e.preventDefault()}>
-          <div className="border border-solid border-white hover:border-blue-800">
-            <label
-              htmlFor="email"
-              className="text-sm font-bold leading-4 text-left text-black"
-            >
-              Email
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              required
-              className="appearance-none rounded w-full px-2 py-2 border-2 border-blue-800 placeholder-black text-black focus:ring-blue-800 focus:border-blue-800 focus:z-10 text-sm font-bold leading-4 text-left"
-              placeholder="capstonegroup6@devcareer.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="border border-solid border-white hover:border-blue-800">
-            <label
-              htmlFor="password"
-              className="text-sm font-bold leading-4 text-left"
-            >
-              Password
-            </label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              autoComplete="current-password"
-              required
-              className="appearance-none rounded w-full px-2 py-2 border-2 border-blue-800 placeholder-black text-black focus:ring-blue-800 focus:border-blue-800 focus:z-10 text-sm font-bold leading-4 text-left"
-              placeholder="...................."
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+                // redirect to dashbord page or any mvp page
+                navigate('/');
+            }, 2000);
 
-          <div>
-            <label
-              htmlFor="Whoops, wrong email or password  provided"
-              className="text-sm font-bold leading-4 text-left text-red-600"
-            >
-              Whoops, wrong email or password provided
-            </label>
-          </div>
-          <div className="flex items-center justify-between">
-            <div>
-              <input
-                id="remember-me"
-                name="remember-me"
-                type="checkbox"
-                checked
-                className="h-4 w-4 appearance-none border-2 border-purple-800 checked:bg-transparent checked:border-purple-800"
-              />
-              <label
-                htmlFor="remember-me"
-                className="text-sm font-bold leading-4 text-left text-purple-800 px-2"
-              >
-                Remember me
-              </label>
-            </div>
+        setEmail("")
+        setPassword("")
+      }
+    };
 
-            <div className="text-sm font-bold leading-4 text-left text-purple-800">
-              <Link to="/forgot-password" className="font-medium text-purple-800">
-                Forgot your password?
-              </Link>
-            </div>
-          </div>
+    const handleGoogleSignin = async (e) => {
+        e.preventDefault();
+      
+        // Perform the Google sign-in logic here
+      
+        console.log("coming soon!");
+      };
 
-          <div>
-            <button
-              type="submit"
-              className="w-full py-2 px-2 text-sm font-bold rounded-sm bg-purple-800  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-800 text-white"
-              onClick={handleLogin}
-            >
-              LOG IN
-            </button>
-          </div>
-        </form>
-        <div className="text-sm font-normal leading-4 text-center">OR</div>
-        {/* Google and Facebook Sign-in Options */}
-        <div className="mt-2 flex flex-col">
-          <button
-            onClick={loginWithGoogle}
-            className="max-w-xs mx-auto w-full h-full py-1 border-2 border-blue-800 text-sm font-bold text-black bg-white focus:outline-none"
-          >
-            <span className="sr-only">Continue with Google</span>
-            <img
-              className="h-5 w-5 mr-1 inline-block align-middle"
-              src="https://img.icons8.com/color/48/000000/google-logo.png"
-              alt="Google Logo"
-            />
-            Continue with Google
-          </button>
-          <button
-            onClick={loginWithFacebook}
-            className="mt-3 max-w-xs mx-auto w-full h-full py-1 border-2 border-blue-800 text-sm font-bold text-black bg-white focus:outline-none"
-          >
-            <span className="sr-only">Continue with Facebook</span>
-            <img
-              className="h-5 w-5 mr-1 inline-block align-middle"
-              src="https://img.icons8.com/color/48/000000/facebook.png"
-              alt="Facebook Logo"
-            />
-            Continue with Facebook
-          </button>
-          <div className="mt-5 text-xs font-bold leading-4 text-center">
-            Don't have account?{" "}
-            <Link to="/signup" className="text-purple-800 font-bold">Sign up</Link>
-          </div>
-        </div>
-      </div>
-    </main>
-  );
-};
+    return (
+        <main className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-0 px-[5%] py-[8%] md:p-0">
+            <AuthSideDesign />
+
+            <Link to={"/"} className="grid place-items-center md:hidden">
+            <img src="/img/motion-revive-logo.svg" alt="logo" width={300} height={300}/>
+            </Link>
+
+            <section className="p-5 md:px-[5%] md:py-[8%] rounded-2xl border border-[#F99025] md:border-none">
+            <ToastContainer />
+                <div className="grid items-center place-items-center">
+                    <h1 className="text-[28px] md:text-[32px] text-center font-bold">Welcome back to<br /> Motion Revive</h1>
+                    <p className="text-[14px] md:text-[16px] text-center font-normal w-full md:w-[80%]">Signin to continue enjoying a better and healthier lifestyle.</p>
+                </div>
+
+                <form action="" className="text-[14px] md:text-[16px] grid gap-4 mt-10">
+                        <label htmlFor="email">Email
+                            <input 
+                            type="email" 
+                            id="email" 
+                            placeholder="Email Address" 
+                            className="input"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            />
+                        </label>
+
+                        <label htmlFor="password">Password
+                            <input 
+                            type="password" 
+                            id="password" 
+                            placeholder="Enter password (must be six characters long, have one capital letter, one special character, one number)" 
+                            className="input"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)} />
+                        </label>
+
+                        <button 
+                        className="bg-[#F99025] text-white font-medium py-3 px-5 text-center rounded-lg"
+                        type="submit"
+                        onClick={handleSubmit}
+                        >Sign in</button>
+
+                        <div className="flex items-center justify-center gap-2">
+                            <hr className="border border-[#000] w-[20px]"/>
+                            OR
+                            <hr className="border border-[#000] w-[20px]"/>
+                        </div>
+
+                        <button
+                        type="button" 
+                        className="flex items-center justify-center gap-2 bg-white text-[#000] border border-[#000] font-medium py-3 px-5 text-center rounded-lg">
+                        <img src="/img/Google.png" alt="google-logo" className="w-[20px] h-[20px]"
+                        onClick={handleGoogleSignin}
+                        /> Sign in with Google</button>
+
+                        <p className="font-semibold text-center">Don’t have account? <Link to={"/signup"} className="text-[#F99025]">Sign up</Link></p>
+                </form>
+            </section>
+        </main>
+    );
+}
 
 export default Signin;
