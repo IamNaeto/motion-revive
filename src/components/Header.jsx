@@ -18,7 +18,7 @@ const Header = () => {
                     <Link to="/contact" className="text-[20px] text-[#5B5858]">Contact</Link>
                 </div>
                 <div className="w-[35%] flex justify-between">
-                    <Link to="/login" className="text-[20px] text-[#EA7600] py-[12px] px-[26px] border-2 border-solid
+                    <Link to="/signin" className="text-[20px] text-[#EA7600] py-[12px] px-[26px] border-2 border-solid
                     border-[#EA7600] rounded-[8px]">Login</Link>
                     <Link to="/signup" className="text-[20px] text-[#FFFFFF] bg-[#EA7600] py-[12px] px-[15px] border-2 border-solid
                     border-[#EA7600] rounded-[8px]">Sign Up</Link>
