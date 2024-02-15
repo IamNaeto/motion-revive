@@ -7,12 +7,14 @@ import ForgotPassword from './pages/ForgotPassword';
 import ForgotPasswordOTP from './pages/ForgetPasswordOTP';
 import ChangePassword from './pages/ChangePassword';
 import Contact from './pages/Contact';
+import About from './pages/About';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" exact element={<Home />} />
+        <Route path="/about" exact element={<About />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/contact" element={<Contact />} />

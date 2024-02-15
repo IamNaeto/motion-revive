@@ -1,12 +1,14 @@
 import Header from '../components/Header';
-import Contactpage from '../components/Contactpage';
+import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
+import BackToTop from '../components/BackToTop';
 export default function Contact() {
   return (
     <div>
       <Header />
-      <Contactpage />
+      <ContactForm />
       <Footer />
+      <BackToTop targetId={top}/>
     </div>
   )
 }

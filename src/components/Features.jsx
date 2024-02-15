@@ -39,18 +39,18 @@ const Features = () => {
         }
     ]
     return (
-        <main className="relative top-[80px] grid gap-8 bg-white pl-[127px] pr-[99px] py-10">
-            <h1 className="text-[48px] text-[#EA7600] font-semibold text-center">Features</h1>
-            <p className="text-[20px] text-center w-[1056px]">Unlock personal growth with Motion Revive. Set, track, and achieve goals 
+        <main className="relative top-[120px] grid place-items-center gap-8 bg-white px-[5%] py-20">
+            <h1 className="text-3xl lg:text-4xl xl:text-5xl text-[#EA7600] font-semibold text-center">Features</h1>
+            <p className="text-[18px] md:text-[20px] text-center w-full lg:w-[60%]">Unlock personal growth with Motion Revive. Set, track, and achieve goals 
             effortlessly. Your path to an organized and fulfilling life starts here.</p>
             <section className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center gap-8">
             {featuresDetails.map((details) => (    
                 <div key={details.id} className="flex items-start gap-4">
-                    <img src={details.img} alt="" />
+                    <img src={details.img} alt="" className="w-[30px] h-[30px]"/>
 
                     <div className="flex flex-col gap-4">
-                        <h1 className="text-[20px] text-[#161C2D] font-semibold">{details.header}</h1>
-                        <p className="text-[16px] text-[#161C2D] font-normal">{details.subheading}</p>
+                        <h1 className="text-[18px] md:text-[20px] text-[#161C2D] font-semibold">{details.header}</h1>
+                        <p className="text-[16px] md:text-[18px] text-[#161C2D] font-normal">{details.subheading}</p>
                     </div>
 
                 </div>
