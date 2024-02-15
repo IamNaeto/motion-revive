@@ -1,0 +1,332 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card-group-one {
+  display: flex;
+  padding: 0 20px;
+  flex-grow: 1;
+}
+
+.card-group-two {
+  flex: 1;
+  padding: 0 20px;
+}
+
+
+.card-group-three {
+  display: flex;
+  padding: 0 20px;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.page-title {
+  padding: 10px 35px;
+  font-family: Rubik;
+  font-weight: 800;
+  font-size: 18px;
+
+}
+
+/*Beginning of Row One Styling */
+.card-chart-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-chart {
+  background: #f5f5ff;
+  width: 40rem;
+  height: 250px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.group-activity {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  margin-left: 30px;
+  flex-grow: 1;
+}
+
+.active-card-group {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+}
+
+.sub-title-text {
+  display: flex;
+  gap: 80px;
+}
+
+.card-active,
+.card-sedentary {
+  background: #f5f5ff;
+  width: 24.5rem;
+  height: 250px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  margin-top: 10px;
+}
+
+.active-container,
+.sedentary-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 80%;
+}
+
+.moving-icon,
+.standing-icon {
+  font-size: 45px;
+  background: #EEA962;
+  border-radius: 50%;
+  padding: 10px;
+  color: gray;
+}
+
+.total-count {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.number-text {
+  font-weight: 400;
+  font-family: Rubik;
+  font-size: 14px;
+}
+
+.number-title {
+  font-weight: 700;
+  font-family: Rubik;
+  font-size: 20px;
+}
+
+.trending-icon {
+  background: #EEA962;
+  border-radius: 10px;
+  padding: 3px 20px;
+  margin-bottom: 5px;
+}
+
+.icon-trending {
+  font-size: 24px;
+}
+
+.chart-title {
+  margin-left: 20px;
+}
+
+.title-header {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: Rubik;
+}
+
+.text-sub {
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Rubik;
+}
+
+/*Row Two CSS Styling */
+.card-goal-content {
+  flex: 1;
+  flex-grow: 1;
+}
+
+.goal-card-group {
+  display: flex;
+  gap: 15px;
+}
+
+.goal-title {
+  margin-left: 20px;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  margin: 0px 30px;
+}
+
+.card-goal {
+  background: #f5f5ff;
+  width: auto;
+  height: 8rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.set-task,
+.active-task,
+.sedentary-task {
+  font-size: 14px;
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+#set-task {
+  width: 200px;
+  height: 42px;
+  border-radius: 20px;
+  padding: 0 15px;
+  font-size: 14px;
+  font-family: Rubik;
+  font-weight: 300;
+  border: 1px solid #CCCCCC;
+}
+
+#active-time,
+#sedentary-time {
+  width: 200px;
+  height: 42px;
+  border-radius: 20px;
+  padding: 0 15px;
+  font-size: 14px;
+  font-family: Rubik;
+  font-weight: 300;
+  border: 1px solid #CCCCCC;
+}
+
+.btn-session {
+  margin: 0 0 5px 30px;
+}
+
+.session-button {
+  width: 200px;
+  height: 42px;
+  border-radius: 20px;
+  padding: 0 15px;
+  font-size: 14px;
+  font-family: Rubik;
+  font-weight: 300;
+  border: 1px solid #CCCCCC;
+  background-color: #EEA962;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.session-button:hover {
+  opacity: 0.7;
+}
+
+
+/*Row Three Styling */
+.card-exercise-content {
+  flex: 1;
+  flex-grow: 1;
+}
+
+.exercise-card-group {
+  display: flex;
+  gap: 15px;
+}
+
+.card-exercise {
+  background: #f5f5ff;
+  width: 24.5rem;
+  height: 13rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+
+.exercise-title {
+  margin-left: 20px;
+}
+
+.title-header {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: Rubik;
+}
+
+.sub-title {
+  display: flex;
+  gap: 300px;
+}
+
+.text-sub {
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Rubik;
+}
+
+.recommended {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: 20px;
+
+}
+
+.exercise {
+  border: 1px solid #CCCCCC;
+  padding: 10px;
+  border-radius: 20px;
+  width: 28rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.exercise-status {
+  border: 1px solid #CCCCCC;
+  padding: 10px;
+  border-radius: 20px;
+  width: 28rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.exercise:hover {
+  background-color: #EEA962;
+}
+
+.exercise-image {
+  width: 50px;
+}
