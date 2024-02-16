@@ -1,0 +1,280 @@
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.dropbtn {
+    display: flex;
+    width: 220px;
+    height: 4rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.625rem;
+    border-radius: 30px!important;
+    border: 1px solid #DADDDD;
+    background: #f5f5f5;
+    cursor: pointer;
+    position: relative;
+    padding: 8px 15px;
+}
+
+.profile-picture {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.text-greeting {
+    color: #26282C;
+    text-align: left;
+    font-family: Rubik;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.text-name {
+    color: #787486;
+    text-align: left;
+    font-family: Rubik;
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.user-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.dropdown-item {
+    position: absolute;
+    margin-top: 10px;
+}
+
+.user-content {
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.user-content:hover {
+    background-color: #EC8F31;
+}
+
+/* Dropdown content styling */
+.dropdown-content {
+    display: none;
+    width: 225px;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 30px;
+    padding: 10px;
+    list-style-type: none;
+}
+
+/* Styling for dropdown content paragraphs */
+.dropdown-content p {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+/* Active state styling for dropdown content paragraphs */
+.dropdown-content p.active {
+    background-color: #ddd;
+}
+
+/* Active state for dropdown */
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+/* End of User Profile Styling */
+
+/* Beginning of Date Styling */
+
+/* Date info styling */
+.date-info {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Text date styling */
+.text-date {
+    color: #26282C;
+    font-family: Rubik;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.375rem;
+}
+
+/* Calendar dropdown styling */
+.calendar-dropdown {
+    position: absolute;
+    margin-top: 250px;
+    z-index: 1;
+}
+
+
+
+/* Styling for the calendar container */
+.react-calendar {
+    font-family: Rubik;
+    border: 2px solid #ddd;
+    padding: 5px;
+    border-radius: 20px;
+    width: 300px;
+    background: #fff;
+}
+
+/* Styling for calendar navigation */
+.react-calendar__navigation {
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+}
+
+/* Styling for calendar navigation label and arrow */
+.react-calendar__navigation__label,
+.react-calendar__navigation__arrow {
+    font-family: Rubik;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: black;
+    margin: 0 2px;
+}
+
+/* Styling for calendar weekdays */
+.react-calendar__month-view__weekdays {
+    background-color: #fff;
+    padding: 5px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+/* Styling for calendar days */
+.react-calendar__month-view__days__day {
+    font-size: 0.7rem;
+    padding: 5px 5px;
+}
+
+/* Active state styling for calendar day */
+.react-calendar__month-view__days__day:active {
+    background-color: #EC8F31;
+    color: black;
+    border-radius: 50%;
+}
+
+/* Hover state styling for calendar day */
+.react-calendar__month-view__days__day:hover {
+    background-color: #EC8F31;
+    border-radius: 10px;
+}
+
+/* Current day styling in calendar */
+.react-calendar__tile--now {
+    background-color: #EC8F31;
+    color: black;
+}
+
+/*End of Date Styling*/
+
+/*Notification Styling*/
+.notification {
+    display: flex;
+    width: 220px;
+    height: 4rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.625rem;
+    border-radius: 30px;
+    border: 1px solid #DADDDD;
+    background: #f5f5f5;
+    cursor: pointer;
+    position: relative;
+    padding: 8px 15px;
+}
+
+
+/* Notification bell styling */
+.notification-bell {
+    display: flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.375rem;
+    border-radius: 50%;
+    border: 0.769px solid #DADDDD;
+}
+
+
+.notification-alert {
+    background: #F88379;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+
+.notification-item {
+    position: absolute;
+    margin-top: 10px;
+}
+
+.notification-content {
+    width: 225px;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.notification-content p {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+
+}
+
+/* Active state styling for dropdown content paragraphs */
+.notification-content p.active {
+    background-color: #ddd;
+}
+
+/* Active state for dropdown */
+.notification.active .notification-content {
+    display: block;
+}
+
+.user-notification {
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+.user-notification:hover {
+    background: #EC8F31;
+}
+
+.notification-item {
+    display: none;
+}
+
+#Notify.active .notification-item {
+    display: block;
+}
