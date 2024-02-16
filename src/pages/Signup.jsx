@@ -1,198 +1,205 @@
-import React, { useState } from "react";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
-import Yoga from "../../public/img/yoga.png";
-import GoogleIcon from "../../public/img/Google.png";
-import BgLogo from "../../public/img/bg-logo.png"
+import AuthSideDesign from "../components/AuthSideDesign";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-  const [password, setPassword] = useState("");
-  const [passwordMessage, setPasswordMessage] = useState("");
-  const [valid, setValid] = useState(true);
-  const [phoneNumber, setPhoneNumber] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [number, setNumber] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
-  let timeout;
+    const isFormValid = () => {
+        if (firstName === "") {
+            toast.error("First name cannot be empty.")
+          return false;
+        }
+    
+        if (lastName === "") {
+            toast.error("Last name cannot be empty.")
+          return false;
+        }
+    
+        if (email === "") {
+            toast.error("Email cannot be empty.")
+          return false;
+        }
+    
+        if (number === "") {
+            toast.error("Phone number cannot be empty.")
+          return false;
+        }
+    
+        const validationResult = validatePassword(password);
+        if (validationResult !== true) {
+          return false;
+        }
+    
+        return true;
+      };
+    
+      const validatePassword = (password) => {
+        if (password === "") {
+            toast.error("Password cannot be empty.")
+            return;
+        }
+    
+        if (password.length < 6) {
+            toast.error("Password must be at least six characters long.")
+            return
+        }
+    
+        if (!/[A-Z]/.test(password)) {
+            toast.error("Password must contain at least one capital letter.")
+            return
+        }
+    
+        if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            toast.error("Password must contain at least one special character.")
+            return
+        }
+    
+        if (!/\d/.test(password)) {
+            toast.error("Password must contain at least one number.")
+            return
+        }
+    
+        return true;
+      };
 
-  const handlePasswordChange = (event) => {
-    const newPassword = event.target.value;
-    setPassword(newPassword);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (isFormValid()) {
+            toast.success("Account created successfully!")
+            setTimeout(() => {
+                // Implement your authentication logic here
+                console.log({firstName, lastName, email, number, password});
 
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      if (newPassword.trim() === "") {
-        setPasswordMessage("");
-      } else {
-        validatePassword(newPassword);
-      }
-    }, 500);
-  };
+                // redirect to signin page
+                navigate('/signin');
+            }, 2000);
 
-  const validatePassword = (password) => {
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            // Clear the form
+            setFirstName("")
+            setLastName("")
+            setEmail("")
+            setNumber("")
+            setPassword("")
+        }
+      };
 
-    if (passwordRegex.test(password)) {
-      setPasswordMessage("Password accepted");
-    } else {
-      setPasswordMessage("Password doesn't match our parameter");
-    }
+      const handleGoogleSubmit = async (e) => {
+        e.preventDefault();
+      
+        // Perform the Google sign-up logic here
+        
+      };
 
-    // Use the callback function to log the correct passwordMessage
-    setPassword((prevPassword) => {
-      console.log("passwordMessage:", passwordMessage);
-      return prevPassword;
-    });
-  };
+    return (
+        <main className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-0 px-[5%] py-[8%] md:p-0">
+            <AuthSideDesign />
 
-  const handleChange = (value) => {
-    setPhoneNumber(value);
-    setValid(validatePhoneNumber(value));
-  };
+            <Link to={"/"} className="grid place-items-center md:hidden">
+            <img src="/img/motion-revive-logo.svg" alt="logo" width={300} height={300}/>
+            </Link>
 
-  const validatePhoneNumber = (phoneNumber) => {
-    const phoneNumberPattern = /^\+?[1-9]\d{1,12}$/;
-
-    return phoneNumberPattern.test(phoneNumber);
-  };
-
-  return (
-    <main className="container  flex overflow-hidden">
-      {/* Left side*/}
-      <div className="w-1/2 bg-[#F99025] h-screen flex flex-col justify-center items-center">
-  <div className="mb-4">
-    <img
-      src={BgLogo}
-      alt="Background Logo"
-      className="w-68 h-40 mb-4 "
-    />
-  </div>
-  
-  <img
-    src={Yoga}
-    alt="Left side content"
-    className="w-80 h-80 rounded-full"
-  />
-</div>
-      {/* Right side */}
-      <div className="w-1/2 py-40 px-24">
-        <div className="max-w-md mx-auto mb-8">
-          <h2 className="text-center text-2xl font-bold leading-7 text-black-900">
-            Welcome, let's create an account
-          </h2>
-          <p className="text-center text-sm text-gray-600 mt-2">
-            Create an account to build yourself with the best version. Once your
-            account has been created then don’t forget to verify your account
-            through the email address provided.
-          </p>
-        </div>
-
-        <form className="max-w-md mx-auto">
-          <div className="mb-4 grid grid-cols-2 gap-4">
-            <label className="block">
-              First Name:
-              <input
-                className="mt-1 p-2 border rounded w-full text-sm"
-                type="text"
-                name="firstName"
-                placeholder="Your first name"
-              />
-            </label>
-            <label className="block">
-              Last Name:
-              <input
-                className="mt-1 p-2 border rounded w-full text-sm"
-                type="text"
-                name="lastName"
-                placeholder="Your last name"
-              />
-            </label>
-          </div>
-          <div className="mb-4">
-            <label className="block">
-              Email:
-              <input
-                className="mt-1 p-2 border rounded w-full text-sm"
-                type="email"
-                name="email"
-              />
-            </label>
-          </div>
-          <div className="mb-4">
-            <label className="block">
-              Phone Number:
-              <PhoneInput
-                country={"ng"}
-                value={phoneNumber}
-                onChange={handleChange}
-                inputProps={{
-                  required: true,
-                }}
-                placeholder="Enter your phone number"
-                inputStyle={{ width: "100%", height: "45px", fontSize: "0.875rem" }}
-                containerStyle={{ marginTop: "5px" }}
-                buttonStyle={{}}
-                dropdownStyle={{ height: "150px" }}
-              />
-            </label>
-            {!valid && <p>Please enter a valid phone number.</p>}
-          </div>
-          <div className="mb-4">
-            <label className="block">
-              Password:
-              <input
-                className="mt-1 p-2 border rounded w-full text-sm"
-                type="password"
-                value={password}
-                name="password"
-                placeholder="Must be at least 8 characters..."
-                onChange={handlePasswordChange}
-              />
-              {passwordMessage && (
-                <div
-                  className={
-                    passwordMessage === "Password accepted"
-                      ? "text-[#006B3C] text-sm"
-                      : "text-[#E30022] text-sm"
-                  }
-                >
-                  {passwordMessage}
+            <section className="p-5 md:px-[5%] md:py-[8%] rounded-2xl border border-[#F99025] md:border-none">
+            <ToastContainer />
+                <div className="grid items-center place-items-center">
+                    <h1 className="text-[28px] md:text-[32px] text-center font-bold">Welcome! <br /> Create Your Account</h1>
+                    <p className="text-[14px] md:text-[16px] text-center font-normal w-full md:w-[80%]">Create an account to avoid the side effects of Sedentary Lifestyle.
+                        Start enjoying a better and healthier lifestyle.</p>
                 </div>
-              )}
-            </label>
-          </div>
-          <div className="mb-4 text-xs">
-            By continuing you agree to the Motion Revive{" "}
-            <a href="#" className="text-[#F99025] underline font-bold">
-              terms of service
-            </a>{" "}
-            and{" "}
-            <a href="/privacy" className="text-[#F99025] underline font-bold">
-              privacy policy
-            </a>
-            .
-          </div>
-          <div className="mb-4">
-            <button
-              type="submit"
-              className="bg-[#F99025] text-white p-2 px-6 rounded w-full text-sm"
-            >
-              Continue
-            </button>
-          </div>
-          <div className="mb-4">
-            <span className="text-black flex justify-center mb-2">-OR-</span>
-            <button
-              type="submit"
-              className="bg-[#Fff] outline outline-1 flex justify-center items-center text-black p-2 px-6 rounded w-full text-sm"
-            >
-              <img src={GoogleIcon} alt="" className="w-4 h-4 mr-2" />
-              Sign in with Google
-            </button>
-          </div>
-        </form>
-      </div>
-    </main>
-  );
-};
+
+                <form action="" className="text-[14px] md:text-[16px] grid gap-4 mt-10">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4">
+                        <label htmlFor="fname">First Name
+                            <input 
+                            type="text" 
+                            id="fname" 
+                            placeholder="First Name" 
+                            className="input"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}/>
+                        </label>
+
+                        <label htmlFor="lname">Last Name
+                            <input 
+                            type="text" 
+                            id="lname" 
+                            placeholder="Last Name" 
+                            className="input" 
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}/>
+                        </label>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4">
+                        <label htmlFor="email">Email
+                            <input 
+                            type="email" 
+                            id="email" 
+                            placeholder="Email Address" 
+                            className="input" 
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}/>
+                        </label>
+
+                        <label htmlFor="phone">Phone Number
+                            <div className="flex items-center justify-center gap-2">
+                                <img src="/img/nigeria.png" alt="naija-flag" />
+                                <input 
+                                type="text" 
+                                id="phone" 
+                                placeholder="Phone Number" 
+                                className="input" 
+                                value={number}
+                                onChange={(e) => setNumber(e.target.value)}/>
+                            </div>
+                        </label>
+                    </div>
+
+                    <label htmlFor="password">Password
+                            <input 
+                            type="password" 
+                            id="password" 
+                            placeholder="Enter password (must be six characters long, have one capital letter, one special character, one number)" 
+                            className="input" 
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}/>
+                        </label>
+
+                        <p className="text-center text-[#7B8499]">By continuing you agree to the Motion Revive <a href="#" className="text-[#000] decoration-underline">terms of service</a> and <a href="#" className="text-[#000] decoration-underline">privacy policy.</a></p>
+
+                        <button 
+                        className="bg-[#F99025] text-white font-medium py-3 px-5 text-center rounded-lg"
+                        type="submit"
+                        onClick={handleSubmit}
+                        >Create Account</button>
+
+                        <div className="flex items-center justify-center gap-2">
+                            <hr className="border border-[#000] w-[20px]"/>
+                            OR
+                            <hr className="border border-[#000] w-[20px]"/>
+                        </div>
+
+                        <button
+                        type="button" 
+                        className="flex items-center justify-center gap-2 bg-white text-[#000] border border-[#000] font-medium py-3 px-5 text-center rounded-lg">
+                        <img src="/img/Google.png" alt="google-logo" 
+                        className="w-[20px] h-[20px]"
+                        onClick={handleGoogleSubmit}
+                        /> Sign up with Google</button>
+
+                        <p className="font-semibold text-center">Already have an account? <Link to={"/signin"} className="text-[#F99025]">Sign in</Link></p>
+                </form>
+            </section>
+        </main>
+    );
+}
 
 export default Signup;

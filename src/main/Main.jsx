@@ -3,13 +3,16 @@ import "./Main.css"
 import { ThemeContext } from '../ThemeContext'
 import Header from '../components/header/Header'
 import Dashboard from '../pages/dashboard/Dashboard'
+import Navigation from '../components/navigation/Navigation'
 
 const Main = () => {
     const {DarkTheme} = useContext(ThemeContext)
   return (
     <div className={`main ${DarkTheme && "dark"}`}>
-        <Header/>
-        <Dashboard/>
+        
+        <Header />
+        <Dashboard />
+        
     </div>
   )
 }

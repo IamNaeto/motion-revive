@@ -3,16 +3,15 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const Hero = () => {
     return (
-        <main className="w-full relative top-[80px] px-[5%] py-[60px] bg-[#161C2D] grid grid-cols-2 gap-5 items-center justify-between justify-items-center">
-            <section className="grid gap-5">
-                <h1 className="text-[60px] text-white font-bold">Your Habit, <br /> Your Life Span...</h1>
-                <p className="text-[16px] text-white font-normal w-[80%]">Only you can build yourself with the best version and Motion Revive App is here to assist you.
-                    Start now, Set your goal: Master your new Habit, Then success is secured.</p>
-                <Link to="/signup" className="text-[#68D585] flex items-center gap-2 hover:gap-4 transition-all delay-150">Start a free trial <FaArrowRightLong /></Link>
-            </section>
-
-            <img src="/img/hero-img.png" alt="hero-img" loading="lazy" className="w-full"/>
-        </main>
+        <section className="relative top-[120px] bg-[#F3A14C] mx-[5%] px-5 md:px-10 py-10 rounded-3xl grid grid-cols-1 md:grid-cols-2 items-center  justify-center gap-8">
+            <div className="grid gap-4 text-[#FFFFFF] text-[16px] md:text-[18px] text-center md:text-left">
+                <h1 className="font-bold text-3xl lg:text-4xl xl:text-5xl leading-tight">Your Habit, <br /> Your Life Span.</h1>
+                <p className="w-[90%] mb-3 md:mb-5">Only you can build yourself with the best version and Motion Revive App is here to assist you. Start now, Set your goal: Master your new Habit, Then success is secured.</p>
+                <Link to="/signup" className=" font-bold text-2xl underline decoration-4
+                underline-offset-[10px]">Start a free trial</Link>
+            </div>
+            <img src="/img/hero-image.png" alt="hero-image" className="mt-5 md:mt-0"/>
+        </section>
     );
 }
 

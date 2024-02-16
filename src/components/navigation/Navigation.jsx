@@ -9,6 +9,7 @@ import Nav from '../navIcon/Nav.jsx';
 import { ThemeContext } from '../../ThemeContext.js';
 
 
+
 const Navigation = () => {
   const [nav, setNav]= useState(false)
 
@@ -20,6 +21,7 @@ const Navigation = () => {
  
   return (
     <div className={`navigation ${nav && 'active'} ${DarkTheme && 'dark'}`}>
+      
        <div className={`menu ${nav && 'active'}`} onClick={()=>{
         setNav((prevState)=> !prevState)
        }}>
