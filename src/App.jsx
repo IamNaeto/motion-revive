@@ -24,9 +24,10 @@ function App() {
     <ThemeContext.Provider value={{ DarkTheme, setDarkTheme }}>
       <Router>
         <div className="App">
-          
+        <Navigation />
+              <Main />
           <Routes>
-          <Route path="/" exact element={<Home />} />
+          {/* <Route path="/" exact element={<Home />} /> */}
          <Route path="/about" exact element={<About />} />
          <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
@@ -38,12 +39,12 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
-          {window.location.pathname.startsWith("/navigation") && (
+          {/* {window.location.pathname.startsWith("/navigation") && (
             <>
               <Navigation />
               <Main />
             </>
-          )}
+          )} */}
         </div>
       </Router>
     </ThemeContext.Provider>
