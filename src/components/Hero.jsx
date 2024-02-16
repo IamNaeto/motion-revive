@@ -10,7 +10,9 @@ const Hero = () => {
                 <Link to="/signup" className=" font-bold text-2xl underline decoration-4
                 underline-offset-[10px]">Start a free trial</Link>
             </div>
-            <img src="/img/hero-image.png" alt="hero-image" className="mt-5 md:mt-0"/>
+            <div>
+            <img src="/img/hero-image.png" alt="hero-image" className="w-full mt-5 md:mt-0"/>
+            </div>
         </section>
     );
 }

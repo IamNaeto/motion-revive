@@ -16,7 +16,7 @@ const MissionAndVision = () => {
             </section>
 
             <section className="flex items-center md:items-end justify-center md:justify-end">
-            <img src="/img/mission.png" alt="" className="rounded-2xl"/>
+            <img src="/img/mission.png" alt="" className="rounded-2xl w-full sm:w-[80%]"/>
             </section>
         </main>
     );
