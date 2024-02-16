@@ -2,7 +2,7 @@ const Story = () => {
     return ( 
         <main className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-5 py-10">
             <section className="flex items-center md:items-start justify-center md:justify-start">
-            <img src="/img/story.png" alt="" className="rounded-2xl"/>
+            <img src="/img/story.png" alt="" className="rounded-2xl w-full sm:w-[80%]"/>
             </section>
 
             <section className="text-[#5B5858]">

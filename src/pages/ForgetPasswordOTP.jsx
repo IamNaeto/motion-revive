@@ -89,7 +89,7 @@ export default function ForgotPasswordOTP() {
               <input
                 key={index}
                 ref={(el) => (inputRefs.current[index] = el)}
-                className=" w-[12%] border border-[#CCCCCC] rounded-lg p-4 text-center outline-none"
+                className=" w-[15%] sm:w-[12%] lg:w-[10%] border border-[#CCCCCC] rounded-lg p-4 text-center outline-none"
                 type="text"
                 maxLength="1"
                 placeholder="0"
