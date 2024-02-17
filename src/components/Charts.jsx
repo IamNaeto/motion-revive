@@ -10,26 +10,23 @@ import {
   Bar,
 } from "recharts";
 
-const data = [
-  { name: "Sun", active: 10, sedentary: 6 },
-  { name: "Mon", active: 3, sedentary: 13 },
-  { name: "Tues", active: 2, sedentary: 9 },
-  { name: "Wed", active: 8, sedentary: 2 },
-  { name: "Thurs", active: 18, sedentary: 4 },
-  { name: "Fri", active: 8, sedentary: 3 },
-  { name: "Sat", active: 13, sedentary: 4 },
-];
-const tickFormatter = (tick) => {
-  return `${tick}hrs`;
-};
+const Charts = ({ activeTimeData, sedentaryTimeData }) => {
+  const chartData = [
+    { name: "Sun", active: activeTimeData ?? 0, sedentary: sedentaryTimeData ?? 0 },
+    { name: "Mon", active: activeTimeData ?? 0, sedentary: sedentaryTimeData ?? 0 },
+    { name: "Tues", active: activeTimeData ?? 0, sedentary: sedentaryTimeData ?? 0 },
+    { name: "Wed", active: activeTimeData ?? 0, sedentary: sedentaryTimeData ?? 0 },
+    { name: "Thurs", active: activeTimeData ?? 0, sedentary: sedentaryTimeData ?? 0 },
+    { name: "Fri", active: activeTimeData ?? 0, sedentary: sedentaryTimeData ?? 0 },
+    { name: "Sat", active: activeTimeData ?? 0, sedentary: sedentaryTimeData ?? 0 },
+  ];
 
-const Charts = () => {
   return (
     <ResponsiveContainer width="100%" height={250}>
       <BarChart
         width={500}
         height={200}
-        data={data}
+        data={chartData}
         margin={{
           top: 30,
           right: 30,
@@ -48,7 +45,7 @@ const Charts = () => {
         <YAxis
           tick={{ fontFamily: "Rubik", fontSize: "14px", fontWeight: 300 }}
           domain={[0, "dataMax"]}
-          ticks={[2, 4, 6, 8, 10, 12, 18, 24]}
+          ticks={[4, 8, 12, 16, 20, 24]}
           tickFormatter={(value) => `${value}hrs`}
         />
         <Tooltip />

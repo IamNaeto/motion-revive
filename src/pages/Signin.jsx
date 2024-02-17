@@ -32,8 +32,8 @@ const Signin = () => {
                 // Implement your authentication logic here
                 console.log({email, password});
 
-                // redirect to dashbord page or any mvp page
-                navigate('/');
+                // redirect to dashbord page
+                navigate('/dashbord');
             }, 2000);
 
         setEmail("")
@@ -57,7 +57,7 @@ const Signin = () => {
             <img src="/img/motion-revive-logo.svg" alt="logo" width={300} height={300}/>
             </Link>
 
-            <section className="p-5 md:px-[5%] md:py-[8%] rounded-2xl border border-[#F99025] md:border-none">
+            <section className="grid items-center p-5 md:px-[5%] md:py-[8%] rounded-2xl border border-[#F99025] md:border-none">
             <ToastContainer />
                 <div className="grid items-center place-items-center">
                     <h1 className="text-[28px] md:text-[32px] text-center font-bold">Welcome back to<br /> Motion Revive</h1>

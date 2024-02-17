@@ -19,33 +19,29 @@ import Settings from "./pages/userProfile/userSettings/Settings";
 
 function App() {
   const [DarkTheme, setDarkTheme] = useState(false);
-  
+
   return (
     <ThemeContext.Provider value={{ DarkTheme, setDarkTheme }}>
       <Router>
-        <div className="App">
-        <Navigation />
-              <Main />
+
           <Routes>
-          {/* <Route path="/" exact element={<Home />} /> */}
-         <Route path="/about" exact element={<About />} />
-         <Route path="/signin" element={<Signin />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/forgot-password-otp" element={<ForgotPasswordOTP/>} />
-         <Route path="/change-password" element={<ChangePassword/>} />
-         <Route path="/navigation/*" element={<Navigation />} />
+            <Route path="/" exact element={<Home />} />
+            <Route path="/about" exact element={<About />} />
+            <Route path="/signin" element={<Signin />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/forgot-password-otp" element={<ForgotPasswordOTP />} />
+            <Route path="/change-password" element={<ChangePassword />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/dashbord" element={
+              <div className='App'>
+                <Navigation />
+                <Main />
+              </div>
+            } />
           </Routes>
-          {/* {window.location.pathname.startsWith("/navigation") && (
-            <>
-              <Navigation />
-              <Main />
-            </>
-          )} */}
-        </div>
       </Router>
     </ThemeContext.Provider>
   );
