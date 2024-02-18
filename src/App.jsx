@@ -24,6 +24,7 @@ function App() {
   return (
     <ThemeContext.Provider value={{ DarkTheme, setDarkTheme }}>
       <Router>
+
           <Routes>
             <Route path="/" exact element={<Home />} />
             <Route path="/about" exact element={<About />} />

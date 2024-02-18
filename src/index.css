@@ -15,6 +15,7 @@
   box-sizing: border-box;
 }
 
+
 /* custom scroll bar */
 ::-webkit-scrollbar {
   width: 10px;
