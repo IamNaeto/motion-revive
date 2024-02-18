@@ -23,6 +23,7 @@ function App() {
   return (
     <ThemeContext.Provider value={{ DarkTheme, setDarkTheme }}>
       <Router>
+
           <Routes>
             <Route path="/" exact element={<Home />} />
             <Route path="/about" exact element={<About />} />
@@ -32,7 +33,6 @@ function App() {
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/forgot-password-otp" element={<ForgotPasswordOTP />} />
             <Route path="/change-password" element={<ChangePassword />} />
-            {/* <Route path="/navigation/*" element={<Navigation />} /> */}
             <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/dashbord" element={
@@ -42,12 +42,6 @@ function App() {
               </div>
             } />
           </Routes>
-          {/* {window.location.pathname.startsWith("/navigation") && (
-            <div className='App'>
-              <Navigation />
-              <Main />
-            </div>
-          )} */}
       </Router>
     </ThemeContext.Provider>
   );
