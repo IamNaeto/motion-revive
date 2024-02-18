@@ -37,7 +37,7 @@ const Navigation = () => {
       <div className='top-item'>
       <Nav Icon={MdDashboard}  title="Dashboard" route={"/dashbord"}/>
       <Nav Icon={MdOutlineAccessibilityNew} title={"Exercise Hub"} route={"/exercise"}/>
-      <Nav Icon={MdWc} title={"Community"} route={"/community"}/>
+      <Nav Icon={MdWc} title={"Community"} route={""}/>
       </div>
      
       <div className='middle-item'>
