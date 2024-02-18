@@ -233,6 +233,7 @@ header {
 .notification-item {
     position: absolute;
     margin-top: 10px;
+    z-index: 100;
 }
 
 .notification-content {
