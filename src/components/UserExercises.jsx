@@ -5,7 +5,7 @@ import { ExerciseDatas } from './ExerciseData';
 
 const UserExercises = () => {
   const [selectedExercise, setSelectedExercise] = useState(null);
-  const [finishedExercises, setFinishedExercises] = useState({});
+  const [CompletedExercises, setCompletedExercises] = useState({});
   const [countdown, setCountdown] = useState(5);
 
   useEffect(() => {
@@ -40,21 +40,21 @@ const UserExercises = () => {
     setSelectedExercise(null);
   };
 
-  const handleFinishClick = () => {
-    setFinishedExercises((prevFinishedExercises) => {
-      const updatedFinishedExercises = { ...prevFinishedExercises };
-      const isFinished = updatedFinishedExercises[selectedExercise.id];
+  const handleCompleteClick = () => {
+    setCompletedExercises((prevCompletedExercises) => {
+      const updatedCompletedExercises = { ...prevCompletedExercises };
+      const isCompleted = updatedCompletedExercises[selectedExercise.id];
 
-      if (isFinished) {
-        delete updatedFinishedExercises[selectedExercise.id]; // Remove the finished flag
+      if (isCompleted) {
+        delete updatedCompletedExercises[selectedExercise.id]; // Remove the Completed flag
       } else {
-        updatedFinishedExercises[selectedExercise.id] = true; // Add the finished flag
+        updatedCompletedExercises[selectedExercise.id] = true; // Add the Completed flag
       }
 
-      return updatedFinishedExercises;
+      return updatedCompletedExercises;
     });
 
-    handleCloseModal(); // Close the modal after toggling the finished state
+    handleCloseModal(); // Close the modal after toggling the Completed state
   };
 
   return (
@@ -64,7 +64,7 @@ const UserExercises = () => {
           key={exerciseData.id}
           exerciseData={exerciseData}
           onClick={() => handleExerciseClick(exerciseData)}
-          isFinished={finishedExercises[exerciseData.id]}
+          isCompleted={CompletedExercises[exerciseData.id]}
         />
       ))}
 
@@ -73,8 +73,8 @@ const UserExercises = () => {
           name={selectedExercise.name}
           gif={selectedExercise.gif}
           onClose={handleCloseModal}
-          onFinished={handleFinishClick}
-          isFinished={finishedExercises[selectedExercise.id]}
+          onCompleted={handleCompleteClick}
+          isCompleted={CompletedExercises[selectedExercise.id]}
           countdown={countdown}
         />
       )}
