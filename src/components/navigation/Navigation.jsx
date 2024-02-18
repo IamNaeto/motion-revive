@@ -20,7 +20,7 @@ const Navigation = () => {
   }
  
   return (
-    <div className={`navigation ${nav && 'active'} ${DarkTheme && 'dark'}`}>
+    <div className={`navigation h-screen ${nav && 'active'} ${DarkTheme && 'dark'}`}>
       
        <div className={`menu ${nav && 'active'}`} onClick={()=>{
         setNav((prevState)=> !prevState)
@@ -35,9 +35,9 @@ const Navigation = () => {
       
       
       <div className='top-item'>
-      <Nav Icon={MdDashboard}  title="Dashboard" />
-      <Nav Icon={MdOutlineAccessibilityNew} title={"Exercise Hub"} />
-      <Nav Icon={MdWc} title={"Community"} />
+      <Nav Icon={MdDashboard}  title="Dashboard" route={"/dashbord"}/>
+      <Nav Icon={MdOutlineAccessibilityNew} title={"Exercise Hub"} route={"/exercise"}/>
+      <Nav Icon={MdWc} title={"Community"} route={""}/>
       </div>
      
       <div className='middle-item'>

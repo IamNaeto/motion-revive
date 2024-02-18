@@ -15,6 +15,7 @@ import { ThemeContext } from "./ThemeContext";
 import { useState } from "react";
 import Profile from "./pages/userProfile/profile/profile";
 import Settings from "./pages/userProfile/userSettings/Settings";
+import Exercise from './pages/exercise';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
                 <Main />
               </div>
             } />
+            <Route path="/exercise" element={ <Exercise />} />
           </Routes>
       </Router>
     </ThemeContext.Provider>
