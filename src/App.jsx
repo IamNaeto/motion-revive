@@ -13,7 +13,7 @@ import Navigation from "./components/navigation/Navigation";
 import Main from "./main/Main";
 import { ThemeContext } from "./ThemeContext";
 import { useState } from "react";
-import Profile from "./pages/userProfile/profile/profile";
+import Profile from './pages/userProfile/profile/Profile';
 import Settings from "./pages/userProfile/userSettings/Settings";
 import Exercise from './pages/exercise';
 
